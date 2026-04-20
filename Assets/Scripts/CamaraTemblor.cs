@@ -20,7 +20,7 @@ public class CamaraTemblor : MonoBehaviour
         if (tiempoRestante > 0)
         {
             Vector3 offset = Random.insideUnitSphere * intensidad;
-            camara.localPosition = posicionOriginal + offset;
+            camara.localPosition += offset;
 
             tiempoRestante -= Time.deltaTime;
         }
