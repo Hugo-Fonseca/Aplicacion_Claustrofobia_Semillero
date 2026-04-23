@@ -10,11 +10,16 @@ public class FPSController : MonoBehaviour
     private CharacterController controller;
     private float rotacionVertical = 0f;
 
+    private float velocidadOriginal;
+
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        velocidadOriginal = velocidad;
     }
 
     void Update()
@@ -48,5 +53,15 @@ public class FPSController : MonoBehaviour
 
         camara.localRotation = Quaternion.Euler(rotacionVertical, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
+    }
+
+    public void CambiarVelocidad(float nuevaVelocidad)
+    {
+        velocidad = nuevaVelocidad;
+    }
+
+    public void RestaurarVelocidad()
+    {
+        velocidad = velocidadOriginal;
     }
 }

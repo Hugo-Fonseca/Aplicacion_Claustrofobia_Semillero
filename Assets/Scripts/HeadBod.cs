@@ -5,8 +5,8 @@ public class HeadBob : MonoBehaviour
     public CharacterController controller;
     public Transform camara;
 
-    public float velocidadBob = 6f;
-    public float cantidadBob = 0.03f;
+    public float velocidadBob = 12f;
+    public float cantidadBob = 0.12f;
 
     private float tiempo = 0f;
     private Vector3 posicionOriginal;
@@ -23,6 +23,8 @@ public class HeadBob : MonoBehaviour
 
         bool estaMoviendose = Mathf.Abs(x) > 0.1f || Mathf.Abs(z) > 0.1f;
 
+        Vector3 offset = Vector3.zero;
+
         if (estaMoviendose && controller.isGrounded)
         {
             tiempo += Time.deltaTime * velocidadBob;
@@ -30,14 +32,17 @@ public class HeadBob : MonoBehaviour
             float movimientoY = Mathf.Sin(tiempo) * cantidadBob;
             float movimientoX = Mathf.Cos(tiempo / 2) * cantidadBob * 0.5f;
 
-            camara.localPosition = posicionOriginal + new Vector3(movimientoX, movimientoY, 0);
+            offset = new Vector3(movimientoX, movimientoY, 0);
         }
         else
         {
             tiempo = 0f;
-            camara.localPosition = Vector3.Lerp(camara.localPosition, posicionOriginal, Time.deltaTime * 5f);
         }
 
-        Debug.Log(controller.velocity.magnitude);
+        camara.localPosition = Vector3.Lerp(
+            camara.localPosition,
+            posicionOriginal + offset,
+            Time.deltaTime * 10f
+        );
     }
 }
