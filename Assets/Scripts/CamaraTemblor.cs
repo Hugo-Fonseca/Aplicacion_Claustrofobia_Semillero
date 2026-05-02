@@ -5,7 +5,7 @@ public class CamaraTemblor : MonoBehaviour
     public Transform camara;
 
     public float duracion = 2f;
-    public float intensidad = 0.1f;
+    public float intensidad = 0.02f;
 
     private float tiempoRestante = 0f;
     private Vector3 posicionOriginal;

@@ -10,15 +10,23 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.instancia != null && GameManager.instancia.cronometro != null)
+        if (!panelTiempo.activeSelf) return;
+
+        if (GameManager.instancia == null || GameManager.instancia.cronometro == null)
+            return;
+
+        if (textoTiempoTotal != null)
         {
             textoTiempoTotal.text =
                 "Tiempo Total: " +
-                GameManager.instancia.cronometro.tiempoTotalExposicion.ToString("F1");
+                FormatearTiempo(GameManager.instancia.cronometro.tiempoTotalExposicion);
+        }
 
+        if (textoTiempoNivel != null)
+        {
             textoTiempoNivel.text =
                 "Tiempo Nivel: " +
-                GameManager.instancia.cronometro.tiempoNivel.ToString("F1");
+                FormatearTiempo(GameManager.instancia.cronometro.tiempoNivel);
         }
     }
 
@@ -30,5 +38,13 @@ public class UIManager : MonoBehaviour
     public void OcultarTiempo()
     {
         panelTiempo.SetActive(false);
+    }
+
+    string FormatearTiempo(float tiempo)
+    {
+        int minutos = Mathf.FloorToInt(tiempo / 60);
+        int segundos = Mathf.FloorToInt(tiempo % 60);
+
+        return minutos.ToString("00") + ":" + segundos.ToString("00");
     }
 }

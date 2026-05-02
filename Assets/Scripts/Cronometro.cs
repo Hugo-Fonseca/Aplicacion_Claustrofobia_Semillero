@@ -8,11 +8,13 @@ public class Cronometro : MonoBehaviour
     public bool simulacionActiva = false;
     public bool nivelActivo = false;
 
-
     void Start()
     {
-        ReanudarSimulacion();
+        // No iniciar en el Hub
+        simulacionActiva = false;
+        nivelActivo = false;
     }
+
     void Update()
     {
         if (simulacionActiva)
@@ -26,35 +28,43 @@ public class Cronometro : MonoBehaviour
         }
     }
 
-    // Inicia un nivel
+    // Iniciar nivel
     public void IniciarNivel()
     {
-        nivelActivo = true;
-        simulacionActiva = true;
         tiempoNivel = 0f;
+        simulacionActiva = true;
+        nivelActivo = true;
     }
 
-    // Pausa por menú o escape
+    // Pausar simulación
     public void PausarSimulacion()
     {
         simulacionActiva = false;
         nivelActivo = false;
     }
 
-    // Continuar después de pausa
+    // Reanudar simulación
     public void ReanudarSimulacion()
     {
         simulacionActiva = true;
         nivelActivo = true;
     }
 
-    // Cuando termina el nivel
+    // Finalizar nivel
     public void FinalizarNivel()
     {
-        nivelActivo = false;
         simulacionActiva = false;
+        nivelActivo = false;
 
         Debug.Log("Tiempo nivel: " + tiempoNivel.ToString("F2"));
         Debug.Log("Tiempo total exposición: " + tiempoTotalExposicion.ToString("F2"));
+    }
+
+    // Reiniciar para nuevo nivel
+    public void ReiniciarCronometro()
+    {
+        tiempoNivel = 0f;
+        simulacionActiva = false;
+        nivelActivo = false;
     }
 }

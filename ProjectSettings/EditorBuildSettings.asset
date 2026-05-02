@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/HubPrincipal.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Niveles_VR/Nivel1_Contenedores.unity
@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Niveles_VR/Nivel2_Pasillo.unity
     guid: 19a2e8b188001014d86a2d550280c084
+  - enabled: 1
+    path: Assets/Niveles_VR/Nivel3_Ascensor.unity
+    guid: 41846a0954826304190f2a421ba9f344
+  - enabled: 1
+    path: Assets/Niveles_VR/Nivel4_Cueva.unity
+    guid: 4f77049ba6851b945bba68ef24dfa57e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
