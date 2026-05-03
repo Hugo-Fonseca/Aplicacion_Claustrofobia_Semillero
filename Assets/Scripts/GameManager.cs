@@ -51,7 +51,9 @@ public class GameManager : MonoBehaviour
     public void SeleccionarNivel(int nivel)
     {
         nivelActual = nivel;
-        vecesEscNivel++;
+
+        // Reiniciar contador de pausas para este nivel
+        vecesEscNivel = 0;
 
         // Registrar qué nivel escogió
         switch (nivel)
@@ -73,13 +75,11 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        // Reiniciar cronómetro del nivel e iniciar
         cronometro.ReiniciarCronometro();
         cronometro.IniciarNivel();
 
         Debug.Log("Nivel seleccionado: " + nivelActual);
     }
-
     // Guarda el tiempo del nivel actual
     public void GuardarTiempoNivel()
     {
@@ -157,6 +157,6 @@ public class GameManager : MonoBehaviour
     // Regresa al Hub principal
     public void VolverAlHub()
     {
-        SceneManager.LoadScene("Scene_Hub");
+        SceneManager.LoadScene("HubPrincipal");
     }
 }

@@ -5169,7 +5169,7 @@ GameObject:
   - component: {fileID: 443800477}
   - component: {fileID: 443800476}
   m_Layer: 5
-  m_Name: BotonSiguienteNivel
+  m_Name: BotonVolverNivelInicial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5239,9 +5239,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 579201780}
-        m_TargetAssemblyTypeName: FinNivelUI, Assembly-CSharp
-        m_MethodName: SiguienteNivel
+      - m_Target: {fileID: 1644568375}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: VolverAlHub
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14891,6 +14891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EscapeSalir
   menuPausa: {fileID: 144611729}
+  uiManager: {fileID: 723605255}
 --- !u!114 &971940077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14905,7 +14906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CamaraTemblor
   camara: {fileID: 1062609415}
   duracion: 2
-  intensidad: 0.1
+  intensidad: 0.01
 --- !u!114 &971940078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23715,6 +23716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   cronometro: {fileID: 1644568377}
+  nivelActual: 0
   vecesAbandono: 0
   vecesEscNivel: 0
   escNivel1: 0
@@ -26831,7 +26833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Siguiente Nivel
+  m_text: Volver Inicio
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}

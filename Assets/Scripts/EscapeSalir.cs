@@ -3,6 +3,7 @@ using UnityEngine;
 public class EscapeSalir : MonoBehaviour
 {
     public GameObject menuPausa;
+    public UIManager uiManager; // Referencia al UIManager para mostrar/ocultar el tiempo
 
     private bool enPausa = false;
 
@@ -29,7 +30,7 @@ public class EscapeSalir : MonoBehaviour
 
         GameManager.instancia.cronometro.PausarSimulacion();
 
-        FindObjectOfType<UIManager>().MostrarTiempo();
+        uiManager.MostrarTiempo();
 
         menuPausa.SetActive(true);
 
@@ -43,7 +44,7 @@ public class EscapeSalir : MonoBehaviour
 
         GameManager.instancia.cronometro.ReanudarSimulacion();
 
-        FindObjectOfType<UIManager>().OcultarTiempo();
+        uiManager.OcultarTiempo();
 
         menuPausa.SetActive(false);
 

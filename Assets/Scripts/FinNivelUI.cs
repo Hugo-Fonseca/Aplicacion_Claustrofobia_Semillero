@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class FinNivelUI : MonoBehaviour
@@ -36,24 +35,37 @@ public class FinNivelUI : MonoBehaviour
     {
         incomodidad = valor;
 
-        int escena = SceneManager.GetActiveScene().buildIndex;
+        switch (GameManager.instancia.nivelActual)
+        {
+            case 1:
+                GameManager.instancia.incNivel1 = valor;
+                break;
 
-        if (escena == 1) GameManager.instancia.incNivel1 = valor;
-        if (escena == 2) GameManager.instancia.incNivel2 = valor;
-        if (escena == 3) GameManager.instancia.incNivel3 = valor;
-        if (escena == 4) GameManager.instancia.incNivel4 = valor;
+            case 2:
+                GameManager.instancia.incNivel2 = valor;
+                break;
+
+            case 3:
+                GameManager.instancia.incNivel3 = valor;
+                break;
+
+            case 4:
+                GameManager.instancia.incNivel4 = valor;
+                break;
+        }
+
+        Debug.Log("Nivel de incomodidad: " + incomodidad);
     }
 
-    public void SiguienteNivel()
+    public void VolverAlHub()
     {
-        // Reiniciar datos del nivel
+        // Reiniciar pausas del nivel actual
         GameManager.instancia.vecesEscNivel = 0;
-        GameManager.instancia.cronometro.tiempoNivel = 0f;
 
-        // Obtener escena actual
-        int escenaActual = SceneManager.GetActiveScene().buildIndex;
+        // Ocultar panel
+        panelFinNivel.SetActive(false);
 
-        // Cargar siguiente escena
-        SceneManager.LoadScene(escenaActual + 1);
+        // Volver al Hub
+        GameManager.instancia.VolverAlHub();
     }
 }
