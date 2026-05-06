@@ -59,4 +59,9 @@ public class GuardarDatos : MonoBehaviour
 
         Debug.Log("Datos guardados en: " + rutaArchivo);
     }
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 }

@@ -3841,7 +3841,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Siguiente Nivel
+  m_text: Volver Inicio
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -7484,7 +7484,7 @@ GameObject:
   - component: {fileID: 1228050348}
   - component: {fileID: 1228050347}
   m_Layer: 5
-  m_Name: BotonSiguienteNivel
+  m_Name: BotonInicio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7556,7 +7556,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1625338423}
         m_TargetAssemblyTypeName: FinNivelUI, Assembly-CSharp
-        m_MethodName: SiguienteNivel
+        m_MethodName: VolverAlHub
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8550,50 +8550,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318421941}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1337099069
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1337099071}
-  - component: {fileID: 1337099070}
-  m_Layer: 0
-  m_Name: SistemaDatos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1337099070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1337099069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac4a0413c3eeeb4cb95e2bde9668324, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GuardarDatos
---- !u!4 &1337099071
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1337099069}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.83127, y: 20.06468, z: -39.54412}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1353666804
 GameObject:
   m_ObjectHideFlags: 0
@@ -10537,6 +10493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EscapeSalir
   menuPausa: {fileID: 140231880}
+  uiManager: {fileID: 0}
 --- !u!114 &1630183165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11484,82 +11441,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682862589}
   m_CullTransparentMesh: 1
---- !u!1 &1707056438
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1707056441}
-  - component: {fileID: 1707056439}
-  - component: {fileID: 1707056440}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1707056439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707056438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e217d578092944091fcf130372e5d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  cronometro: {fileID: 1707056440}
-  vecesAbandono: 0
-  vecesEscNivel: 0
-  escNivel1: 0
-  escNivel2: 0
-  escNivel3: 0
-  escNivel4: 0
-  incNivel1: 0
-  incNivel2: 0
-  incNivel3: 0
-  incNivel4: 0
-  tiempoNivel1: 0
-  tiempoNivel2: 0
-  tiempoNivel3: 0
-  tiempoNivel4: 0
---- !u!114 &1707056440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707056438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fd2de09c0ed6b7458343e64097a2886, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Cronometro
-  tiempoTotalExposicion: 0
-  tiempoNivel: 0
-  simulacionActiva: 0
-  nivelActivo: 0
---- !u!4 &1707056441
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707056438}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.49284, y: -0, z: 13.31897}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1712904215
 GameObject:
   m_ObjectHideFlags: 0
@@ -12446,7 +12327,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1707056439}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: AbandonarSimulacion
         m_Mode: 1
@@ -13391,7 +13272,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1337099070}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GuardarDatos, Assembly-CSharp
         m_MethodName: Guardar
         m_Mode: 1
@@ -13911,12 +13792,10 @@ SceneRoots:
   - {fileID: 2037198715}
   - {fileID: 1436174179}
   - {fileID: 1630183170}
-  - {fileID: 1707056441}
   - {fileID: 146865325}
   - {fileID: 1574718222}
   - {fileID: 1716820275}
   - {fileID: 681106858}
-  - {fileID: 1337099071}
   - {fileID: 1500722266}
   - {fileID: 965125976}
   - {fileID: 1196230203}

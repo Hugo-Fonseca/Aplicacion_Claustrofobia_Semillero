@@ -1091,7 +1091,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2106956161}
         m_TargetAssemblyTypeName: FinNivelUI, Assembly-CSharp
-        m_MethodName: SiguienteNivel
+        m_MethodName: VolverAlHub
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2732,6 +2732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EscapeSalir
   menuPausa: {fileID: 1426899242}
+  uiManager: {fileID: 0}
 --- !u!114 &1035203465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3236,7 +3237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Siguiente Nivel
+  m_text: Volver Inicio
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -3363,6 +3364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   cronometro: {fileID: 1187754198}
+  guardarDatos: {fileID: 0}
+  nivelActual: 0
   vecesAbandono: 0
   vecesEscNivel: 0
   escNivel1: 0

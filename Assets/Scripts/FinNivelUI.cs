@@ -68,4 +68,5 @@ public class FinNivelUI : MonoBehaviour
         // Volver al Hub
         GameManager.instancia.VolverAlHub();
     }
+
 }

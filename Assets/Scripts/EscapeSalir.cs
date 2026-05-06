@@ -51,4 +51,9 @@ public class EscapeSalir : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+    public void BotonSalir()
+    {
+        Debug.Log("BOTON SALIR FUNCIONA");
+        GameManager.instancia.AbandonarSimulacion();
+    }
 }

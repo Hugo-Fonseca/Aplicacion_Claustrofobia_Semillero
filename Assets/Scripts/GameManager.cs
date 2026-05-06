@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 
     public Cronometro cronometro;
 
+    public GuardarDatos guardarDatos;
+
     // Nivel actual seleccionado
     public int nivelActual = 0;
 
@@ -148,8 +150,15 @@ public class GameManager : MonoBehaviour
 
         cronometro.PausarSimulacion();
 
+        // Guardar CSV
+        if (guardarDatos != null)
+        {
+            guardarDatos.Guardar();
+        }
+
         Debug.Log("Usuario abandonó la simulación");
-        Debug.Log("Tiempo total exposición: " + cronometro.tiempoTotalExposicion.ToString("F2"));
+        Debug.Log("Tiempo total exposición: " +
+            cronometro.tiempoTotalExposicion.ToString("F2"));
 
         VolverAlHub();
     }
