@@ -1125,7 +1125,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 88.22987}
+  m_AnchoredPosition: {x: 0, y: 14.485504}
   m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &467463180
@@ -2541,6 +2541,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PortalLevel
   sceneToLoad: Nivel2_Pasillo
   numeroNivel: 2
+  nombreNivel: Nivel Pasillo
+  confirmacionNivel: {fileID: 1953086810}
 --- !u!1 &870027313
 GameObject:
   m_ObjectHideFlags: 0
@@ -2803,7 +2805,7 @@ GameObject:
   - component: {fileID: 933546582}
   - component: {fileID: 933546581}
   m_Layer: 0
-  m_Name: Portal Ascensor (1)
+  m_Name: Portal Cueva
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2823,6 +2825,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PortalLevel
   sceneToLoad: Nivel4_Cueva
   numeroNivel: 4
+  nombreNivel: Nivel Cueva
+  confirmacionNivel: {fileID: 1953086810}
 --- !u!65 &933546582
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2944,6 +2948,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PortalLevel
   sceneToLoad: Nivel3_Ascensor
   numeroNivel: 3
+  nombreNivel: Nivel Ascensor
+  confirmacionNivel: {fileID: 1953086810}
 --- !u!65 &994731467
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3880,6 +3886,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PortalLevel
   sceneToLoad: Nivel1_Contenedores
   numeroNivel: 1
+  nombreNivel: Nivel Contenedores
+  confirmacionNivel: {fileID: 1953086810}
 --- !u!65 &1317086858
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4415,6 +4423,81 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7080b9f4dd3bce4dbde59e654ccb209, type: 3}
+--- !u!1 &1403921026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1403921027}
+  - component: {fileID: 1403921029}
+  - component: {fileID: 1403921028}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1403921027
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403921026}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 18.62, y: 9.54, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1953086809}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1403921028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403921026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0.9137255}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1403921029
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403921026}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1409790759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4963,7 +5046,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1466065653}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1953086810}
+        m_TargetAssemblyTypeName: ConfirmacionNivel, Assembly-CSharp
+        m_MethodName: Cancelar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1466065653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5796,8 +5891,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4287959620
+  m_fontColor: {r: 0.26776496, g: 0.06897471, b: 0.5849056, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6402,7 +6497,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1863286954}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1953086810}
+        m_TargetAssemblyTypeName: ConfirmacionNivel, Assembly-CSharp
+        m_MethodName: IrAlNivel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1863286954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6810,13 +6917,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1953086809}
+  - component: {fileID: 1953086810}
   m_Layer: 5
   m_Name: PanelConfirmacion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1953086809
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6829,6 +6937,7 @@ RectTransform:
   m_LocalScale: {x: 0.37969, y: 0.37969, z: 0.37969}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1403921027}
   - {fileID: 467463179}
   - {fileID: 1609396472}
   - {fileID: 1863286952}
@@ -6840,6 +6949,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1953086810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953086808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b8d40c1b892edd46b7cd996e6037f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConfirmacionNivel
+  panelConfirmacion: {fileID: 1953086808}
+  textoTitulo: {fileID: 1609396473}
 --- !u!1 &2024333118
 GameObject:
   m_ObjectHideFlags: 0

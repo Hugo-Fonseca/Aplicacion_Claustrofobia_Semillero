@@ -1,18 +1,22 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PortalLevel : MonoBehaviour
 {
     public string sceneToLoad;
     public int numeroNivel;
+    public string nombreNivel;
+
+    public ConfirmacionNivel confirmacionNivel;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.instancia.SeleccionarNivel(numeroNivel);
-
-            SceneManager.LoadScene(sceneToLoad);
+            confirmacionNivel.MostrarConfirmacion(
+                nombreNivel,
+                sceneToLoad,
+                numeroNivel
+            );
         }
     }
 }
