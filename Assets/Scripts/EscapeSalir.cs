@@ -54,6 +54,7 @@ public class EscapeSalir : MonoBehaviour
     public void BotonSalir()
     {
         Debug.Log("BOTON SALIR FUNCIONA");
-        GameManager.instancia.AbandonarSimulacion();
+
+        GameManager.instancia.SalirAplicacion();
     }
 }

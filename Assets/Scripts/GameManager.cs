@@ -168,4 +168,17 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("HubPrincipal");
     }
+
+    public void SalirAplicacion()
+    {
+        // Guardar datos antes de salir
+        if (guardarDatos != null)
+        {
+            guardarDatos.Guardar();
+        }
+
+        Debug.Log("Cerrando aplicación...");
+
+        Application.Quit();
+    }
 }
