@@ -14990,7 +14990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CamaraTemblor
   camara: {fileID: 1062609415}
   duracion: 2
-  intensidad: 0.1
+  intensidad: 0.02
 --- !u!1001 &977590692
 PrefabInstance:
   m_ObjectHideFlags: 0
