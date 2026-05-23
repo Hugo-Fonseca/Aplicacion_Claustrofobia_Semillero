@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.google.xr.cardboard": {
+      "version": "file:C:/Users/User/Desktop/Unity VR/cardboard-xr-plugin-1.19.0/cardboard-xr-plugin-1.19.0",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.xr.management": "3.2.9",
+        "com.unity.xr.legacyinputhelpers": "2.1.4"
+      }
+    },
     "com.unity.ai.navigation": {
       "version": "2.0.9",
       "depth": 0,
