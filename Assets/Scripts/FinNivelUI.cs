@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class FinNivelUI : MonoBehaviour
 {
@@ -9,7 +10,25 @@ public class FinNivelUI : MonoBehaviour
     public TextMeshProUGUI textoTiempoTotal;
     public TextMeshProUGUI textoEscNivel;
 
+    // TODOS los botones de incomodidad
+    public Button[] botonesIncomodidad;
+
+    public Color colorSeleccionado = Color.green;
+    private Color[] coloresOriginales;
+
+    private bool yaSelecciono = false;
     private int incomodidad = 0;
+
+    void Start()
+    {
+        coloresOriginales = new Color[botonesIncomodidad.Length];
+
+        for (int i = 0; i < botonesIncomodidad.Length; i++)
+        {
+            coloresOriginales[i] =
+                botonesIncomodidad[i].GetComponent<Image>().color;
+        }
+    }
 
     public void MostrarPanel()
     {
@@ -17,6 +36,15 @@ public class FinNivelUI : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        // Reiniciar selección cada vez que abre el panel
+        yaSelecciono = false;
+
+        // Reactivar botones
+        foreach (Button boton in botonesIncomodidad)
+        {
+            boton.interactable = true;
+        }
 
         textoTiempoNivel.text =
             "Tiempo del nivel: " +
@@ -33,6 +61,10 @@ public class FinNivelUI : MonoBehaviour
 
     public void SeleccionarIncomodidad(int valor)
     {
+        if (yaSelecciono)
+            return;
+
+        yaSelecciono = true;
         incomodidad = valor;
 
         switch (GameManager.instancia.nivelActual)
@@ -54,19 +86,30 @@ public class FinNivelUI : MonoBehaviour
                 break;
         }
 
+        // Resaltar botón seleccionado
+        for (int i = 0; i < botonesIncomodidad.Length; i++)
+        {
+            Button boton = botonesIncomodidad[i];
+
+            if (i == valor - 1)
+            {
+                boton.GetComponent<Image>().color = colorSeleccionado;
+            }
+            else
+            {
+                boton.interactable = false;
+            }
+        }
+
         Debug.Log("Nivel de incomodidad: " + incomodidad);
     }
 
     public void VolverAlHub()
     {
-        // Reiniciar pausas del nivel actual
         GameManager.instancia.vecesEscNivel = 0;
 
-        // Ocultar panel
         panelFinNivel.SetActive(false);
 
-        // Volver al Hub
         GameManager.instancia.VolverAlHub();
     }
-
 }

@@ -12,10 +12,13 @@ public class FPSController : MonoBehaviour
 
     private float velocidadOriginal;
 
+    private AudioSource audioPasos;
+
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        audioPasos = GetComponent<AudioSource>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -40,7 +43,26 @@ public class FPSController : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 mover = transform.right * x + transform.forward * z;
+
         controller.Move(mover * velocidad * Time.deltaTime);
+
+        // Detectar si el jugador se está moviendo
+        bool moviendose = mover.magnitude > 0.1f;
+
+        if (moviendose)
+        {
+            if (!audioPasos.isPlaying)
+            {
+                audioPasos.Play();
+            }
+        }
+        else
+        {
+            if (audioPasos.isPlaying)
+            {
+                audioPasos.Pause();
+            }
+        }
     }
 
     void Mirar()
