@@ -9536,7 +9536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EscapeSalir
   menuPausa: {fileID: 440782745}
-  uiManager: {fileID: 0}
+  uiManager: {fileID: 686969840}
 --- !u!114 &1638860211
 MonoBehaviour:
   m_ObjectHideFlags: 0
