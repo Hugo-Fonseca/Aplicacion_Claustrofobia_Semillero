@@ -7019,6 +7019,7 @@ GameObject:
   - component: {fileID: 1912507070}
   - component: {fileID: 1912507075}
   - component: {fileID: 1912507074}
+  - component: {fileID: 1912507076}
   m_Layer: 0
   m_Name: XRRig
   m_TagString: Untagged
@@ -7162,6 +7163,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FPSControllerVR
   velocidad: 2.5
+--- !u!114 &1912507076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912507067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f9fd26fdd83c5841a1d122b77cbb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardboardSimulator
+  UseCardboardSimulator: 1
+  horizontalSpeed: 0.5
+  verticalSpeed: 0.5
+  rotationX: 0
+  rotationY: 0
 --- !u!1 &1953086808
 GameObject:
   m_ObjectHideFlags: 0
