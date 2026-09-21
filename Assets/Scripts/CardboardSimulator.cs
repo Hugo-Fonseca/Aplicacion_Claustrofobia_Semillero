@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CardboardSimulator : MonoBehaviour
@@ -9,11 +6,13 @@ public class CardboardSimulator : MonoBehaviour
 
     [SerializeField] private float horizontalSpeed = 0.5f;
     [SerializeField] private float verticalSpeed = 0.5f;
+
     [SerializeField] private float rotationX = 0.0f;
     [SerializeField] private float rotationY = 0.0f;
+
     private Camera cam;
 
-    void Start() 
+    void Start()
     {
 #if UNITY_EDITOR
         cam = Camera.main;
@@ -25,22 +24,34 @@ public class CardboardSimulator : MonoBehaviour
 #if UNITY_EDITOR
         if (!UseCardboardSimulator)
             return;
+
+        if (cam == null)
+            return;
+
         if (Input.GetMouseButton(0))
         {
             float mouseX = Input.GetAxis("Mouse X") * horizontalSpeed;
-            float mouseY = Input.GetAxis("Mouse Y") * verticalSpeed; 
+            float mouseY = Input.GetAxis("Mouse Y") * verticalSpeed;
+
             rotationY += mouseX;
             rotationX -= mouseY;
-            rotationX = Mathf.Clamp(rotationX, -45, 45);
-            cam.transform.localEulerAngles = new Vector3(rotationX, rotationY, 0.0f);
+
+            rotationX = Mathf.Clamp(rotationX, -45f, 45f);
+
+            cam.transform.localEulerAngles =
+                new Vector3(rotationX, rotationY, 0.0f);
         }
 #endif
     }
 
-    public void UpdatePlayerPositonSimulator()
+    public void UpdatePlayerPositionSimulator()
     {
+#if UNITY_EDITOR
+        if (cam == null)
+            return;
+
         rotationX = 0;
         rotationY = cam.transform.localEulerAngles.y;
+#endif
     }
-
 }

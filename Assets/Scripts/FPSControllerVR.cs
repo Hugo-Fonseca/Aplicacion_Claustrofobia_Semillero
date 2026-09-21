@@ -11,6 +11,12 @@ public class FPSControllerVR : MonoBehaviour
 
     private Vector2 movimientoInput;
 
+    [Header("Cámara VR")]
+    public Transform camaraVR;
+
+    [Header("Sonido de pasos")]
+    public AudioSource audioPasos;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -30,11 +36,43 @@ public class FPSControllerVR : MonoBehaviour
 
     void Movimiento()
     {
+        // Dirección hacia donde mira la cámara
+        Vector3 adelante = camaraVR.forward;
+
+        // Dirección derecha de la cámara
+        Vector3 derecha = camaraVR.right;
+
+        // Evitar que mirar hacia arriba/abajo afecte el movimiento
+        adelante.y = 0;
+        derecha.y = 0;
+
+        adelante.Normalize();
+        derecha.Normalize();
+
+        // Movimiento según la dirección de la cabeza
         Vector3 mover =
-            transform.right * movimientoInput.x +
-            transform.forward * movimientoInput.y;
+            derecha * movimientoInput.x +
+            adelante * movimientoInput.y;
 
         controller.Move(mover * velocidad * Time.deltaTime);
+
+        // Detectar movimiento
+        bool moviendose = movimientoInput.magnitude > 0.1f;
+
+        if (moviendose)
+        {
+            if (!audioPasos.isPlaying)
+            {
+                audioPasos.Play();
+            }
+        }
+        else
+        {
+            if (audioPasos.isPlaying)
+            {
+                audioPasos.Pause();
+            }
+        }
     }
 
     public void CambiarVelocidad(float nuevaVelocidad)
