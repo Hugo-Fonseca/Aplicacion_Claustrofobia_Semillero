@@ -1,24 +1,41 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class EscapeSalir : MonoBehaviour
 {
     public GameObject menuPausa;
-    public UIManager uiManager; // Referencia al UIManager para mostrar/ocultar el tiempo
+    public UIManager uiManager;
 
     private bool enPausa = false;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // ESC del teclado para PC
+        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            if (!enPausa)
-            {
-                Pausar();
-            }
-            else
-            {
-                Reanudar();
-            }
+            CambiarPausa();
+        }
+    }
+
+    // Esta función será utilizada por ESC y por START
+    public void CambiarPausa()
+    {
+        if (!enPausa)
+        {
+            Pausar();
+        }
+        else
+        {
+            Reanudar();
+        }
+    }
+
+    // Botón START del control
+    public void OnStart(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            CambiarPausa();
         }
     }
 
@@ -51,6 +68,7 @@ public class EscapeSalir : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
     public void BotonSalir()
     {
         Debug.Log("BOTON SALIR FUNCIONA");

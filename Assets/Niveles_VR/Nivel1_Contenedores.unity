@@ -1745,6 +1745,7 @@ GameObject:
   - component: {fileID: 144611730}
   - component: {fileID: 144611732}
   - component: {fileID: 144611731}
+  - component: {fileID: 144611733}
   m_Layer: 5
   m_Name: MenuPause
   m_TagString: Untagged
@@ -1811,6 +1812,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144611729}
   m_CullTransparentMesh: 1
+--- !u!114 &144611733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144611729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4184ef13d3a03d449a97f8c4864ef0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SeleccionarBotonUI
+  botonInicial: {fileID: 685616514}
 --- !u!1001 &148874248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7924,6 +7938,7 @@ GameObject:
   - component: {fileID: 579201779}
   - component: {fileID: 579201778}
   - component: {fileID: 579201780}
+  - component: {fileID: 579201781}
   m_Layer: 5
   m_Name: PanelFinalNivel
   m_TagString: Untagged
@@ -8016,6 +8031,19 @@ MonoBehaviour:
   textoTiempoNivel: {fileID: 855226012}
   textoTiempoTotal: {fileID: 411521556}
   textoEscNivel: {fileID: 179886647}
+--- !u!114 &579201781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579201776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4184ef13d3a03d449a97f8c4864ef0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SeleccionarBotonUI
+  botonInicial: {fileID: 983856122}
 --- !u!1 &582268780
 GameObject:
   m_ObjectHideFlags: 0

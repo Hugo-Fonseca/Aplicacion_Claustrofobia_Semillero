@@ -3764,6 +3764,7 @@ GameObject:
   - component: {fileID: 1426899243}
   - component: {fileID: 1426899245}
   - component: {fileID: 1426899244}
+  - component: {fileID: 1426899246}
   m_Layer: 5
   m_Name: MenuPause
   m_TagString: Untagged
@@ -3830,6 +3831,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426899242}
   m_CullTransparentMesh: 1
+--- !u!114 &1426899246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426899242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4184ef13d3a03d449a97f8c4864ef0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SeleccionarBotonUI
+  botonInicial: {fileID: 1906928803}
 --- !u!1 &1482030460
 GameObject:
   m_ObjectHideFlags: 0
@@ -5468,6 +5482,7 @@ GameObject:
   - component: {fileID: 2106956163}
   - component: {fileID: 2106956162}
   - component: {fileID: 2106956161}
+  - component: {fileID: 2106956164}
   m_Layer: 5
   m_Name: PanelFinalNivel
   m_TagString: Untagged
@@ -5560,6 +5575,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106956159}
   m_CullTransparentMesh: 1
+--- !u!114 &2106956164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106956159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4184ef13d3a03d449a97f8c4864ef0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SeleccionarBotonUI
+  botonInicial: {fileID: 868747108}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
