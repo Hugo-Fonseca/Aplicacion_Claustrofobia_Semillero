@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class AudioManager : MonoBehaviour, IaudioManager
 {
-    public static AudioManager Instance { get; private set; } 
+    public static AudioManager Instance { get; private set; } // Instancia única del AudioManager
 
     [SerializeField] private List<SoundData> sounds; // Lista de SoundData para almacenar los sonidos
 
