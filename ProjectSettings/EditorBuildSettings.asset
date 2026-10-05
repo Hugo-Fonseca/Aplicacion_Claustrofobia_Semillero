@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/HubPrincipal.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Niveles_VR/Nivel1_Contenedores.unity
-    guid: e89605d3613fc8148ae9d4ccde61538e
+    path: Assets/Niveles_VR/Nivel1_Residencial.unity
+    guid: 90d6f1346287d3c418bc39748bf52457
   - enabled: 1
     path: Assets/Niveles_VR/Nivel2_Pasillo.unity
     guid: 19a2e8b188001014d86a2d550280c084
