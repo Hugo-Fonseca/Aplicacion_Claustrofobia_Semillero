@@ -15,20 +15,7 @@ public class FinNivelUI : MonoBehaviour
     {
         panelFinNivel.SetActive(true);
 
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        textoTiempoNivel.text =
-            "Tiempo del nivel: " +
-            GameManager.instancia.cronometro.tiempoNivel.ToString("F1") + " s";
-
-        textoTiempoTotal.text =
-            "Tiempo total: " +
-            GameManager.instancia.cronometro.tiempoTotalExposicion.ToString("F1") + " s";
-
-        textoEscNivel.text =
-            "Veces que pausó (ESC): " +
-            GameManager.instancia.vecesEscNivel;
+        
     }
 
     public void SeleccionarIncomodidad(int valor)
