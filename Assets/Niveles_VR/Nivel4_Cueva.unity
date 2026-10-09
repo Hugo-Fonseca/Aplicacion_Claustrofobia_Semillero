@@ -2793,7 +2793,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 915849684}
-  - {fileID: 1196713823}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &392644688
@@ -5393,6 +5392,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 686969844}
+  - {fileID: 1196713823}
   m_Father: {fileID: 915849684}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &897400305
@@ -5762,14 +5762,13 @@ GameObject:
   - component: {fileID: 928686764}
   - component: {fileID: 928686763}
   - component: {fileID: 928686762}
-  - component: {fileID: 928686765}
   m_Layer: 5
   m_Name: PanelFinalNivel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &928686761
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5809,6 +5808,7 @@ MonoBehaviour:
   textoTiempoNivel: {fileID: 2062062052}
   textoTiempoTotal: {fileID: 179941209}
   textoEscNivel: {fileID: 1087944690}
+  tiempoMostrar: 5
 --- !u!114 &928686763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5847,19 +5847,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928686760}
   m_CullTransparentMesh: 1
---- !u!114 &928686765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 928686760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4184ef13d3a03d449a97f8c4864ef0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SeleccionarBotonUI
-  botonInicial: {fileID: 0}
 --- !u!1001 &959408284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7182,13 +7169,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196713822}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08715578, y: -0, z: -0, w: 0.9961947}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 382592264}
-  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+  m_Father: {fileID: 897400304}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1196713824
 MonoBehaviour:
   m_ObjectHideFlags: 0

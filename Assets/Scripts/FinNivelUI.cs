@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class FinNivelUI : MonoBehaviour
 {
@@ -9,51 +10,44 @@ public class FinNivelUI : MonoBehaviour
     public TextMeshProUGUI textoTiempoTotal;
     public TextMeshProUGUI textoEscNivel;
 
-    private int incomodidad = 0;
+    public float tiempoMostrar = 5f;
 
     public void MostrarPanel()
     {
+        // Mostrar los datos del nivel
+        textoTiempoNivel.text =
+            "Tiempo del nivel: " +
+            FormatearTiempo(GameManager.instancia.cronometro.tiempoNivel);
+
+        textoTiempoTotal.text =
+            "Tiempo total: " +
+            FormatearTiempo(GameManager.instancia.cronometro.tiempoTotalExposicion);
+
+        textoEscNivel.text =
+            "Veces que escapó: " +
+            GameManager.instancia.vecesEscNivel;
+
+        // Mostrar panel
         panelFinNivel.SetActive(true);
 
-        
+        // Iniciar cuenta regresiva
+        StartCoroutine(EsperarYVolverAlHub());
     }
 
-    public void SeleccionarIncomodidad(int valor)
+    private IEnumerator EsperarYVolverAlHub() // Coroutine para esperar un tiempo y luego volver al hub
     {
-        incomodidad = valor;
+        yield return new WaitForSecondsRealtime(tiempoMostrar); // Esperar tiempoMostrar segundos en tiempo real (ignora el Time.timeScale)
 
-        switch (GameManager.instancia.nivelActual)
-        {
-            case 1:
-                GameManager.instancia.incNivel1 = valor;
-                break;
-
-            case 2:
-                GameManager.instancia.incNivel2 = valor;
-                break;
-
-            case 3:
-                GameManager.instancia.incNivel3 = valor;
-                break;
-
-            case 4:
-                GameManager.instancia.incNivel4 = valor;
-                break;
-        }
-
-        Debug.Log("Nivel de incomodidad: " + incomodidad);
-    }
-
-    public void VolverAlHub()
-    {
-        // Reiniciar pausas del nivel actual
-        GameManager.instancia.vecesEscNivel = 0;
-
-        // Ocultar panel
         panelFinNivel.SetActive(false);
 
-        // Volver al Hub
-        GameManager.instancia.VolverAlHub();
+        GameManager.instancia.VolverAlHub(); // Llamar al método para volver al hub
     }
 
+    private string FormatearTiempo(float tiempo)
+    {
+        int minutos = Mathf.FloorToInt(tiempo / 60f); // Obtener los minutos
+        int segundos = Mathf.FloorToInt(tiempo % 60f); // Obtener los segundos restantes
+
+        return minutos.ToString("00") + ":" + segundos.ToString("00"); // Formatear como MM:SS
+    }
 }

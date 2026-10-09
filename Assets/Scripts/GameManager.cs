@@ -24,12 +24,6 @@ public class GameManager : MonoBehaviour
     public int escNivel3 = 0;
     public int escNivel4 = 0;
 
-    // Veces que aumentó la intensidad de cada nivel
-    public int incNivel1 = 0;
-    public int incNivel2 = 0;
-    public int incNivel3 = 0;
-    public int incNivel4 = 0;
-
     // Tiempo acumulado por nivel
     public float tiempoNivel1 = 0f;
     public float tiempoNivel2 = 0f;
@@ -105,31 +99,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Registrar incremento de dificultad/intensidad
-    public void IncrementarNivel()
-    {
-        switch (nivelActual)
-        {
-            case 1:
-                incNivel1++;
-                break;
-
-            case 2:
-                incNivel2++;
-                break;
-
-            case 3:
-                incNivel3++;
-                break;
-
-            case 4:
-                incNivel4++;
-                break;
-        }
-
-        Debug.Log("Incremento registrado en nivel: " + nivelActual);
-    }
-
     // Finaliza correctamente un nivel
     public void FinalizarNivel()
     {
@@ -139,8 +108,6 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("Nivel finalizado: " + nivelActual);
         Debug.Log("Tiempo del nivel: " + cronometro.tiempoNivel.ToString("F2"));
-
-        VolverAlHub();
     }
 
     // Si el usuario abandona la simulación

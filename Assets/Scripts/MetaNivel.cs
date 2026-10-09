@@ -4,13 +4,18 @@ public class MetaNivel : MonoBehaviour
 {
     public FinNivelUI finNivelUI;
 
+    private bool nivelFinalizado = false;
+
     private void OnTriggerEnter(Collider other)
     {
+        if (nivelFinalizado)
+            return;
+
         if (other.CompareTag("Player"))
         {
-            GameManager.instancia.cronometro.FinalizarNivel();
+            nivelFinalizado = true;
 
-            GameManager.instancia.GuardarTiempoNivel();
+            GameManager.instancia.FinalizarNivel();
 
             finNivelUI.MostrarPanel();
 
