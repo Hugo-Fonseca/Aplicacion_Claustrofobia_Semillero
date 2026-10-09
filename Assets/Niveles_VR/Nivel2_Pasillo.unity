@@ -596,7 +596,7 @@ Transform:
   m_GameObject: {fileID: 51127229}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11593,7 +11593,7 @@ Transform:
   m_GameObject: {fileID: 1836945299}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.36144, z: 0}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12548,6 +12548,8 @@ MonoBehaviour:
   velocidad: 2.5
   camaraVR: {fileID: 51127230}
   audioPasos: {fileID: 2006038372}
+  pitchNormal: 1
+  pitchLento: 0.7
 --- !u!114 &2006038377
 MonoBehaviour:
   m_ObjectHideFlags: 0

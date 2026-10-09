@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,9 +7,7 @@ public class FPSControllerVR : MonoBehaviour
     public float velocidad = 2.5f;
 
     private CharacterController controller;
-
     private float velocidadOriginal;
-
     private Vector2 movimientoInput;
 
     [Header("Cámara VR")]
@@ -16,12 +15,18 @@ public class FPSControllerVR : MonoBehaviour
 
     [Header("Sonido de pasos")]
     public AudioSource audioPasos;
+    public float pitchNormal = 1f;
+    public float pitchLento = 0.7f;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
-
         velocidadOriginal = velocidad;
+
+        if (audioPasos != null)
+        {
+            audioPasos.pitch = pitchNormal;
+        }
     }
 
     void Update()
@@ -36,41 +41,38 @@ public class FPSControllerVR : MonoBehaviour
 
     void Movimiento()
     {
-        // Dirección hacia donde mira la cámara
         Vector3 adelante = camaraVR.forward;
-
-        // Dirección derecha de la cámara
         Vector3 derecha = camaraVR.right;
 
-        // Evitar que mirar hacia arriba/abajo afecte el movimiento
         adelante.y = 0;
         derecha.y = 0;
 
         adelante.Normalize();
         derecha.Normalize();
 
-        // Movimiento según la dirección de la cabeza
         Vector3 mover =
             derecha * movimientoInput.x +
             adelante * movimientoInput.y;
 
         controller.Move(mover * velocidad * Time.deltaTime);
 
-        // Detectar movimiento
         bool moviendose = movimientoInput.magnitude > 0.1f;
 
-        if (moviendose)
+        if (audioPasos != null)
         {
-            if (!audioPasos.isPlaying)
+            if (moviendose)
             {
-                audioPasos.Play();
+                if (!audioPasos.isPlaying)
+                {
+                    audioPasos.Play();
+                }
             }
-        }
-        else
-        {
-            if (audioPasos.isPlaying)
+            else
             {
-                audioPasos.Pause();
+                if (audioPasos.isPlaying)
+                {
+                    audioPasos.Pause();
+                }
             }
         }
     }
@@ -78,10 +80,20 @@ public class FPSControllerVR : MonoBehaviour
     public void CambiarVelocidad(float nuevaVelocidad)
     {
         velocidad = nuevaVelocidad;
+
+        if (audioPasos != null)
+        {
+            audioPasos.pitch = pitchLento;
+        }
     }
 
     public void RestaurarVelocidad()
     {
         velocidad = velocidadOriginal;
+
+        if (audioPasos != null)
+        {
+            audioPasos.pitch = pitchNormal;
+        }
     }
 }

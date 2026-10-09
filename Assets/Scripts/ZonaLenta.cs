@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class ZonaLenta : MonoBehaviour
@@ -8,7 +9,8 @@ public class ZonaLenta : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            FPSController jugador = other.GetComponent<FPSController>();
+            FPSControllerVR jugador =
+                other.GetComponent<FPSControllerVR>();
 
             if (jugador != null)
             {
@@ -21,7 +23,8 @@ public class ZonaLenta : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            FPSController jugador = other.GetComponent<FPSController>();
+            FPSControllerVR jugador =
+                other.GetComponent<FPSControllerVR>();
 
             if (jugador != null)
             {
