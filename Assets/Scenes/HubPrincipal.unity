@@ -2928,7 +2928,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 294b00804ed584d4ab6b6ea04153afdb, type: 2}
+  - {fileID: 2100000, guid: ad9b23eb22f4c5d4eab51aaec94fda13, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3515,10 +3515,6 @@ MonoBehaviour:
   escNivel2: 0
   escNivel3: 0
   escNivel4: 0
-  incNivel1: 0
-  incNivel2: 0
-  incNivel3: 0
-  incNivel4: 0
   tiempoNivel1: 0
   tiempoNivel2: 0
   tiempoNivel3: 0
@@ -7517,6 +7513,8 @@ MonoBehaviour:
   velocidad: 2.5
   camaraVR: {fileID: 1365314388}
   audioPasos: {fileID: 1912507077}
+  pitchNormal: 1
+  pitchLento: 0.7
 --- !u!114 &1912507076
 MonoBehaviour:
   m_ObjectHideFlags: 0
