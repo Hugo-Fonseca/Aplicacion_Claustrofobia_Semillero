@@ -9716,7 +9716,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d690ce46b58f6704caed1ffbff694459, type: 2}
+  - {fileID: 2100000, guid: 780a09e9cb23ad047b6564db9ea0a0da, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10996,13 +10996,7 @@ MonoBehaviour:
   textoTiempoNivel: {fileID: 900539340}
   textoTiempoTotal: {fileID: 1662968175}
   textoEscNivel: {fileID: 1202998698}
-  botonesIncomodidad:
-  - {fileID: 1953418417}
-  - {fileID: 1682862591}
-  - {fileID: 1189054704}
-  - {fileID: 1173168758}
-  - {fileID: 218328253}
-  colorSeleccionado: {r: 0, g: 1, b: 0, a: 1}
+  tiempoMostrar: 5
 --- !u!114 &1625338424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11094,6 +11088,8 @@ MonoBehaviour:
   velocidad: 2.5
   sensibilidadMouse: 120
   camara: {fileID: 439703821}
+  pitchNormal: 1
+  pitchLento: 0.7
 --- !u!143 &1630183166
 CharacterController:
   m_ObjectHideFlags: 0

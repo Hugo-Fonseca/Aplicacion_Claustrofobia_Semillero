@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class FPSController : MonoBehaviour
@@ -5,29 +6,36 @@ public class FPSController : MonoBehaviour
     public float velocidad = 2.5f;
     public float sensibilidadMouse = 120f;
 
-    public Transform camara; // Referencia directa a la cámara
+    public Transform camara;
 
     private CharacterController controller;
     private float rotacionVertical = 0f;
-
     private float velocidadOriginal;
-
     private AudioSource audioPasos;
 
+    [Header("Sonido de pasos")]
+    public float pitchNormal = 1f;
+    public float pitchLento = 0.7f;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         audioPasos = GetComponent<AudioSource>();
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
         velocidadOriginal = velocidad;
+
+        if (audioPasos != null)
+        {
+            audioPasos.pitch = pitchNormal;
+        }
     }
 
     void Update()
     {
-        // Si el cursor está libre (menú de pausa), no permitir movimiento ni cámara
+        // Si el cursor está libre, no permitir movimiento ni cámara.
         if (Cursor.lockState == CursorLockMode.None)
         {
             return;
@@ -46,21 +54,23 @@ public class FPSController : MonoBehaviour
 
         controller.Move(mover * velocidad * Time.deltaTime);
 
-        // Detectar si el jugador se está moviendo
         bool moviendose = mover.magnitude > 0.1f;
 
-        if (moviendose)
+        if (audioPasos != null)
         {
-            if (!audioPasos.isPlaying)
+            if (moviendose)
             {
-                audioPasos.Play();
+                if (!audioPasos.isPlaying)
+                {
+                    audioPasos.Play();
+                }
             }
-        }
-        else
-        {
-            if (audioPasos.isPlaying)
+            else
             {
-                audioPasos.Pause();
+                if (audioPasos.isPlaying)
+                {
+                    audioPasos.Pause();
+                }
             }
         }
     }
@@ -80,10 +90,20 @@ public class FPSController : MonoBehaviour
     public void CambiarVelocidad(float nuevaVelocidad)
     {
         velocidad = nuevaVelocidad;
+
+        if (audioPasos != null)
+        {
+            audioPasos.pitch = pitchLento;
+        }
     }
 
     public void RestaurarVelocidad()
     {
         velocidad = velocidadOriginal;
+
+        if (audioPasos != null)
+        {
+            audioPasos.pitch = pitchNormal;
+        }
     }
 }

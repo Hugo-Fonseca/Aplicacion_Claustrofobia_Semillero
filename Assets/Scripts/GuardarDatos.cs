@@ -3,11 +3,11 @@ using System.IO;
 
 public class GuardarDatos : MonoBehaviour
 {
-    private string rutaArchivo;
+    private string rutaArchivo; // Variable para almacenar la ruta del archivo CSV
 
     void Start()
     {
-        rutaArchivo = Application.persistentDataPath + "/resultados_simulacion.csv";
+        rutaArchivo = Application.persistentDataPath + "/resultados_simulacion.csv"; // Ruta del archivo CSV en la carpeta persistente de la aplicación
 
         if (!File.Exists(rutaArchivo))
         {
@@ -20,11 +20,7 @@ public class GuardarDatos : MonoBehaviour
                 "ESC_Contenedores;" +
                 "ESC_Pasillo;" +
                 "ESC_Ascensor;" +
-                "ESC_Cueva;" +
-                "Inc_Contenedores;" +
-                "Inc_Pasillo;" +
-                "Inc_Ascensor;" +
-                "Inc_Cueva\n";
+                "ESC_Cueva\n";
 
             File.WriteAllText(rutaArchivo, encabezado);
 
@@ -32,7 +28,7 @@ public class GuardarDatos : MonoBehaviour
         }
     }
 
-    public void Guardar()
+    public void Guardar() // Método para guardar los datos en el archivo CSV
     {
         if (GameManager.instancia == null)
         {
@@ -49,19 +45,15 @@ public class GuardarDatos : MonoBehaviour
             GameManager.instancia.escNivel1 + ";" +
             GameManager.instancia.escNivel2 + ";" +
             GameManager.instancia.escNivel3 + ";" +
-            GameManager.instancia.escNivel4 + ";" +
-            GameManager.instancia.incNivel1 + ";" +
-            GameManager.instancia.incNivel2 + ";" +
-            GameManager.instancia.incNivel3 + ";" +
-            GameManager.instancia.incNivel4 + "\n";
+            GameManager.instancia.escNivel4 + "\n";
 
-        File.AppendAllText(rutaArchivo, linea);
+        File.AppendAllText(rutaArchivo, linea); // Agregar la línea de datos al archivo CSV
 
-        Debug.Log("Datos guardados en: " + rutaArchivo);
+        Debug.Log("Datos guardados en: " + rutaArchivo); // Confirmación de que los datos se han guardado
     }
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject); // Evitar que el objeto se destruya al cargar una nueva escena
     }
 }

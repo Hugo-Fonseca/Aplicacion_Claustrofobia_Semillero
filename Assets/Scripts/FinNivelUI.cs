@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
+using System.Collections;
 
 public class FinNivelUI : MonoBehaviour
 {
@@ -10,106 +10,44 @@ public class FinNivelUI : MonoBehaviour
     public TextMeshProUGUI textoTiempoTotal;
     public TextMeshProUGUI textoEscNivel;
 
-    // TODOS los botones de incomodidad
-    public Button[] botonesIncomodidad;
-
-    public Color colorSeleccionado = Color.green;
-    private Color[] coloresOriginales;
-
-    private bool yaSelecciono = false;
-    private int incomodidad = 0;
-
-    void Start()
-    {
-        coloresOriginales = new Color[botonesIncomodidad.Length];
-
-        for (int i = 0; i < botonesIncomodidad.Length; i++)
-        {
-            coloresOriginales[i] =
-                botonesIncomodidad[i].GetComponent<Image>().color;
-        }
-    }
+    public float tiempoMostrar = 5f;
 
     public void MostrarPanel()
     {
-        panelFinNivel.SetActive(true);
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        // Reiniciar selección cada vez que abre el panel
-        yaSelecciono = false;
-
-        // Reactivar botones
-        foreach (Button boton in botonesIncomodidad)
-        {
-            boton.interactable = true;
-        }
-
+        // Mostrar los datos del nivel
         textoTiempoNivel.text =
             "Tiempo del nivel: " +
-            GameManager.instancia.cronometro.tiempoNivel.ToString("F1") + " s";
+            FormatearTiempo(GameManager.instancia.cronometro.tiempoNivel);
 
         textoTiempoTotal.text =
             "Tiempo total: " +
-            GameManager.instancia.cronometro.tiempoTotalExposicion.ToString("F1") + " s";
+            FormatearTiempo(GameManager.instancia.cronometro.tiempoTotalExposicion);
 
         textoEscNivel.text =
-            "Veces que pausó (ESC): " +
+            "Veces que escapó: " +
             GameManager.instancia.vecesEscNivel;
+
+        // Mostrar panel
+        panelFinNivel.SetActive(true);
+
+        // Iniciar cuenta regresiva
+        StartCoroutine(EsperarYVolverAlHub());
     }
 
-    public void SeleccionarIncomodidad(int valor)
+    private IEnumerator EsperarYVolverAlHub() // Coroutine para esperar un tiempo y luego volver al hub
     {
-        if (yaSelecciono)
-            return;
-
-        yaSelecciono = true;
-        incomodidad = valor;
-
-        switch (GameManager.instancia.nivelActual)
-        {
-            case 1:
-                GameManager.instancia.incNivel1 = valor;
-                break;
-
-            case 2:
-                GameManager.instancia.incNivel2 = valor;
-                break;
-
-            case 3:
-                GameManager.instancia.incNivel3 = valor;
-                break;
-
-            case 4:
-                GameManager.instancia.incNivel4 = valor;
-                break;
-        }
-
-        // Resaltar botón seleccionado
-        for (int i = 0; i < botonesIncomodidad.Length; i++)
-        {
-            Button boton = botonesIncomodidad[i];
-
-            if (i == valor - 1)
-            {
-                boton.GetComponent<Image>().color = colorSeleccionado;
-            }
-            else
-            {
-                boton.interactable = false;
-            }
-        }
-
-        Debug.Log("Nivel de incomodidad: " + incomodidad);
-    }
-
-    public void VolverAlHub()
-    {
-        GameManager.instancia.vecesEscNivel = 0;
+        yield return new WaitForSecondsRealtime(tiempoMostrar); // Esperar tiempoMostrar segundos en tiempo real (ignora el Time.timeScale)
 
         panelFinNivel.SetActive(false);
 
-        GameManager.instancia.VolverAlHub();
+        GameManager.instancia.VolverAlHub(); // Llamar al método para volver al hub
+    }
+
+    private string FormatearTiempo(float tiempo)
+    {
+        int minutos = Mathf.FloorToInt(tiempo / 60f); // Obtener los minutos
+        int segundos = Mathf.FloorToInt(tiempo % 60f); // Obtener los segundos restantes
+
+        return minutos.ToString("00") + ":" + segundos.ToString("00"); // Formatear como MM:SS
     }
 }
