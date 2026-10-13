@@ -463,7 +463,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ddb2eed212828c5479c6c4ae0202c8ff, type: 2}
+  - {fileID: 2100000, guid: 780a09e9cb23ad047b6564db9ea0a0da, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3312,7 +3312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f119ec39db2c55847b8e4c8235abba63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PortalLevel
-  sceneToLoad: Nivel3_Ascensor
+  sceneToLoad: Nivel3_Ascensor 1
   numeroNivel: 3
   nombreNivel: Nivel Ascensor
   confirmacionNivel: {fileID: 1953086810}
@@ -3816,10 +3816,6 @@ MonoBehaviour:
   escNivel2: 0
   escNivel3: 0
   escNivel4: 0
-  incNivel1: 0
-  incNivel2: 0
-  incNivel3: 0
-  incNivel4: 0
   tiempoNivel1: 0
   tiempoNivel2: 0
   tiempoNivel3: 0
@@ -4387,7 +4383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f119ec39db2c55847b8e4c8235abba63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PortalLevel
-  sceneToLoad: Nivel1_Residencial
+  sceneToLoad: Nivel1_Contenedores 1
   numeroNivel: 1
   nombreNivel: Nivel Residencial
   confirmacionNivel: {fileID: 1953086810}
@@ -5914,6 +5910,8 @@ MonoBehaviour:
   velocidad: 2.5
   sensibilidadMouse: 120
   camara: {fileID: 1365314388}
+  pitchNormal: 1
+  pitchLento: 0.7
 --- !u!143 &1484518946
 CharacterController:
   m_ObjectHideFlags: 0
